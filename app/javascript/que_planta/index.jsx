@@ -11,14 +11,22 @@ import App from './components/app';
 
 const Planta = props => (
   <div>Hello {props.name}!</div>
-)
+);
 
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Planta name="Plants plants plants!" />,
-    document.body.appendChild(document.createElement('div')),
-  )
-})
+// const App = () => {
+//   return (
+//     <div>My plants go here:
+//       <Planta name="Plants plants plants!" />,
+//     </div>
+//   );
+// };
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   ReactDOM.render(
+//     <Planta name="Plants plants plants!" />,
+//     document.body.appendChild(document.createElement('div')),
+//   )
+// })
 
 const initialState = {
   // messages: [],
@@ -35,10 +43,7 @@ const store = createStore(reducers, initialState, middlewares);
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" component={App} />
-      </Switch>
-    </BrowserRouter>
+    <Planta name="Plants plants plants!"/>
   </Provider>,
+  document.getElementById('app')
 );
